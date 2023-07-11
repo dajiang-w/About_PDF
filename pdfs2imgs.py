@@ -2,7 +2,7 @@
 # C:\Python\paddleocr\Scripts\activate
 import pdfplumber as pp
 import os
-
+import sys
 
 def pdf2pic(pdfspath,imgspath,format,resolution): # format:bmp,png,jpeg,tiff
     pdffiles = os.listdir(pdfspath) # 此文件夹下只保留pdf文件
@@ -21,4 +21,7 @@ def pdf2pic(pdfspath,imgspath,format,resolution): # format:bmp,png,jpeg,tiff
 
 
 if __name__ == "__main__":
+    pdfspath = sys.argv[1]
+    imgspath = sys.argv[2]
+    # print(pdfspath)
     pdf2pic(pdfspath = "F:\\code\\pdfs",imgspath = "F:\\code\\img",format="JPEG",resolution=300)

@@ -2,7 +2,7 @@ import os #导入os库
 import time #导入时间库生成时间戳
 import img2pdf #导入img2pdf库， 安装命令：pip install img2pdf
 from PIL import Image
-
+import sys
 
 def imgs2pdf(imgspath: str): 
     '''
@@ -38,7 +38,8 @@ def compressimgs(imgspath: str,compresspath: str,quality: int):
         print( "压缩完成" + compresspath,img.split(".")[0] + ".jpg" )
         
 if __name__ == "__main__":
-    imgspath = 'F:/code/img/'  #设置图片文件夹
+    imgspath = sys.argv[1]
+    # imgspath = 'F:/code/img/'  #设置图片文件夹
     # compresspath = 'F:/code/compress/'
     # compressimgs(imgspath,compresspath,quality=50)
     imgs2pdf(imgspath)
